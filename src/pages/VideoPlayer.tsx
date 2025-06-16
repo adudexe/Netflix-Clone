@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import endpoints from "../Service"
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 interface Data {
   id: string
@@ -21,8 +22,11 @@ export const VideoPlayer = () => {
   const {id} = useParams();
   const url = endpoints.video(Number(id)); 
   useEffect(()=>{
-    axios.get(url).then((res) => {
+    axios.get(url).then((res:any) => {
       setData(res.data.results[0]);
+    }).catch((err:any)=>{
+      toast.error("Something Went Wrong..");
+      console.log("Error in Video Player ",err)
     })
   },[id])
   

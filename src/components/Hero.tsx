@@ -17,11 +17,11 @@ export const Hero = () => {
     const navigate = useNavigate();
 
     useEffect(()=>{
-        axios.get(endpoints.popular).then((res) => {
+        axios.get(endpoints.popular).then((res:any) => {
           const movies = res.data.results
           const randomMovies = movies[ Math.floor(Math.random() * 10)]
           setMovie(randomMovies);
-        }).catch((err)=>{
+        }).catch((err:any)=>{
             console.log("Error is ",err);
         })
     },[])

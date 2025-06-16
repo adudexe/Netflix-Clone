@@ -16,7 +16,7 @@ export const Profile = () => {
   useEffect(() => {
     if (!email) return;
 
-    const unsubscribe = onSnapshot(doc(db, "users", email), (docSnap) => {
+    const unsubscribe = onSnapshot(doc(db, "users", email), (docSnap:any) => {
       const data = docSnap.data();
       if (data?.favShows) {
         setMovies(data.favShows);
