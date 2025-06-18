@@ -10,7 +10,8 @@ const endpoints = {
     upcoming:`${baseUrl}/movie/upcoming?api_key=${key}`,
     video : (id:number) => {
         return `${baseUrl}/movie/${id}/videos?api_key=${key}&language=en-US`;
-    }
+    },
+    details: (id: number) => `${baseUrl}/movie/${id}?api_key=${key}`
 }
 
 export default endpoints

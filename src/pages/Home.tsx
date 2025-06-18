@@ -1,7 +1,6 @@
-import React from 'react'
-import { Hero } from '../components/Hero'
-import MovieRow from '../components/MovieRow'
-import endpoints from '../Service'
+import { Hero } from '../components/Hero';
+import MovieRow from '../components/MovieRow';
+import endpoints from '../Service';
 export const Home = () => {
   return (
     <>

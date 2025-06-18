@@ -80,14 +80,14 @@ export const MovieItem = ({movie}:data) => {
 
   return (
     
-    <div onClick={() => openVideo(movie?.id)} className=" relative w-[160px] sm:w-[200px] md:w-[240px] lg:w-[288px] inline-block rounded-lg overflow-hidden cursor-pointer m-2">
+    <div  className=" relative w-[160px] sm:w-[200px] md:w-[240px] lg:w-[288px] inline-block rounded-lg overflow-hidden cursor-pointer m-2">
         <img
          className="w-full h-48 block object-cover object-top"
          src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path ? movie.backdrop_path : movie.poster_path}`}  
          alt={movie.title} />
 
         <div className="absolute top-0 left-0 w-full h-full bg-black/60 opacity-0 hover:opacity-100">
-          <p className="whitespace-normal text-xl md:test-sm flex justify-center items-center h-full font-bold">
+          <p onClick={() => openVideo(movie?.id)} className="whitespace-normal text-xl md:test-sm flex justify-center items-center h-full font-bold">
             {movie.title}
           </p> 
             <p>{like ? 
